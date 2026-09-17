@@ -57,7 +57,7 @@ fun  DemoText(message: String, fontSize: Float){
 fun DemoSlider(sliderPosition: Float, onPositionChange: (Float)-> Unit){
     Slider(
         modifier = Modifier.padding(10.dp),
-        valueRange = 20f..1000f,
+        valueRange = 20f..38f,
         value = sliderPosition,
         onValueChange = onPositionChange
     )
