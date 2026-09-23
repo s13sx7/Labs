@@ -19,6 +19,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.Image
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.Alignment
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,15 +40,23 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun DemoScreen(modifier: Modifier = Modifier){
     val mymodifier = modifier
+        .border(width = 2.dp, color = Color.Black)
         .padding(all = 10.dp)
 
-        .border(width = 2.dp, color = Color.Black)
-    Text(
-        "Hello Compose",
-        modifier = mymodifier,
-        fontSize = 40.sp,
-        fontWeight = FontWeight.Bold
-    )
+    Column(
+        Modifier.padding(20.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
+        Text(
+            "Hello Compose",
+            modifier = mymodifier,
+            fontSize = 40.sp,
+            fontWeight = FontWeight.Bold
+        )
+        Spacer(Modifier.height(16.dp))
+        CustomImage(R.drawable.rjakasmeyaka)
+    }
 }
 
 @Preview(showBackground = true)//showSystemUi = true
