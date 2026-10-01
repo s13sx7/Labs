@@ -50,15 +50,29 @@ fun TextCell(text: String, modifier: Modifier = Modifier) {
 
 @Composable
 fun MainScreen(modifier: Modifier = Modifier){
-//    Row(modifier) {
-//        TextCell("1")
-//        TextCell("2")
-//        TextCell("3")
-//    }
     Column(modifier) {
-        TextCell("1")
-        TextCell("2")
-        TextCell("3")
+        Row {
+            Column {
+                TextCell("1")
+                TextCell("2")
+                TextCell("3")
+            }
+            Column {
+                TextCell("4")
+                TextCell("5")
+                TextCell("6")
+            }
+            Column {
+                TextCell("7")
+                TextCell("8")
+            }
+        }
+        Row{
+            TextCell("9")
+            TextCell("10")
+            TextCell("11")
+        }
+
     }
 }
 
