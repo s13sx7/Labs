@@ -41,7 +41,7 @@ fun TextCell(text: String, modifier: Modifier = Modifier) {
     val cellModifier = modifier
         .padding(4.dp)
         .size(100.dp, 100.dp)
-        .border(width = 4.dp, color = Color.Black)
+        .border(width = 4.dp, color = Color.Magenta)
     Text(text = text, cellModifier.then(modifier),
         fontSize = 80.sp,
         fontWeight = FontWeight.Bold,
@@ -50,7 +50,16 @@ fun TextCell(text: String, modifier: Modifier = Modifier) {
 
 @Composable
 fun MainScreen(modifier: Modifier = Modifier){
-
+    Row(modifier) {
+        TextCell("1")
+        TextCell("2")
+        TextCell("3")
+    }
+//    Column(modifier) {
+//        TextCell("1")
+//        TextCell("2")
+//        TextCell("3")
+//    }
 }
 
 @Preview(showBackground = true)
