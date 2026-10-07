@@ -16,6 +16,7 @@ import com.sample.lab22.ui.theme.Lab22Theme
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -51,8 +52,13 @@ fun TextCell(text: String, modifier: Modifier = Modifier) {
 
 @Composable
 fun MainScreen(modifier: Modifier = Modifier){
-    Column(horizontalAlignment = Alignment.End,
-        modifier = modifier.width(250.dp)) {
+    Row(modifier = modifier.height(300.dp)) {
+        TextCell("1", Modifier.align(Alignment.Top))
+        TextCell("2", Modifier.align(Alignment.CenterVertically))
+        TextCell("3", Modifier.align(Alignment.Bottom))
+    }
+    Column(verticalArrangement = Arrangement.Top,
+        modifier = modifier.height(400.dp)) {
         TextCell("1")
         TextCell("2")
         TextCell("3")
