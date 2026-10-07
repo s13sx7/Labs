@@ -43,6 +43,34 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+@Preview(showBackground = true)
+@Composable
+fun AgeAnaliz(modifier: Modifier = Modifier) {
+    val ageInput = remember { mutableStateOf("") }
+    val resultText = remember { mutableStateOf("") }
+
+    Column(modifier = modifier.padding(16.dp).fillMaxSize(),
+        horizontalAlignment = Alignment.CenterHorizontally) {
+
+        TextField(
+            value = ageInput.value,
+            onValueChange = { ageInput.value = it },
+            label = { Text("Введите ваш возраст") }
+        )
+
+        Button(onClick = {
+            val age = ageInput.value.toIntOrNull()
+            if (age == null) {
+                resultText.value = "Введите число"
+            } else {
+                resultText.value = Age(age)
+            }
+        }) {
+            Text("Анализ")
+        }
+        Text(text = resultText.value)
+    }
+}
 
 fun Age(age: Int): String {
     return when {
