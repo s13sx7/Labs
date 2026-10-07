@@ -23,6 +23,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.layout.LastBaseline
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,13 +55,13 @@ fun TextCell(text: String, modifier: Modifier = Modifier) {
 fun MainScreen(modifier: Modifier = Modifier){
     Row {
         Text(
-            text = "Large Text",
-            Modifier.alignByBaseline(),
+            text = "Текст побольше\n\nТекст поменьше",
+            Modifier.alignBy(LastBaseline),
             fontSize = 40.sp,
             fontWeight = FontWeight.Bold
         )
         Text(
-            text = "Small Text",
+            text = "Маленький",
             Modifier.alignByBaseline(),
             fontSize = 32.sp,
             fontWeight = FontWeight.Bold
