@@ -51,13 +51,11 @@ fun TextCell(text: String, modifier: Modifier = Modifier) {
 
 @Composable
 fun MainScreen(modifier: Modifier = Modifier){
-    Row(verticalAlignment = Alignment.CenterVertically,
-        modifier = modifier.size(width = 400.dp, height = 200.dp)) {
+    Column(horizontalAlignment = Alignment.End,
+        modifier = modifier.width(250.dp)) {
         TextCell("1")
         TextCell("2")
-        Column(horizontalAlignment = Alignment.End){
-            TextCell("3")
-        }
+        TextCell("3")
     }
 }
 
