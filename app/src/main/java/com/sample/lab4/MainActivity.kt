@@ -72,14 +72,14 @@ fun AgeAnaliz(modifier: Modifier = Modifier) {
     }
 }
 
-fun Age(age: Int): String {
-    return when {
-        age < 0 -> "Вы еще не родились"
-        age <= 20 -> "Вы слишком молоды!"
-        age in setOf(30, 40, 50, 60) -> "Поздравляем с повышением!"
-        age == 65 -> "Преподносим вам золотые часы!"
-        age > 65 && age < 1488 -> "Вы слишком стары!"
-        age == 1488 -> "Число бога"
-        else -> "Продолжайте накапливать опыт!"
+fun Int_aproximation(number: Int): Int {
+    if (number > 7)
+        return -1;
+    var a = 0;
+    for (i in 1..10000) {
+        a += 1/i;
+        if (a > number)
+            break;
     }
+    return a;
 }
