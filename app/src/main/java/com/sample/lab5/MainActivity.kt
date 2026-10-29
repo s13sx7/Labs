@@ -52,6 +52,41 @@ fun TipCalculatorScreen(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        // Сумма заказа
+        Text(text = "Сумма заказа:")
+        TextField(
+            value = orderAmount,
+            onValueChange = { orderAmount = it },
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+            modifier = Modifier.fillMaxWidth()
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        // Количество блюд
+        Text(text = "Количество блюд:")
+        TextField(
+            value = dishCount,
+            onValueChange = { dishCount = it },
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+            modifier = Modifier.fillMaxWidth()
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        // Чаевые
+        Text(text = "Чаевые:")
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            Slider(
+                value = tipPercentage,
+                onValueChange = { tipPercentage = it },
+                valueRange = 0f..25f,
+                modifier = Modifier
+                    .width(300.dp)
+            )
+            Text(text = "${tipPercentage.toInt()}%")
+        }
+
     }
 }
 
