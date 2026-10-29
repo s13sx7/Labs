@@ -40,6 +40,19 @@ class MainActivity : ComponentActivity() {
 fun TipCalculatorScreen(
     modifier: Modifier = Modifier
 ) {
+    var orderAmount by remember { mutableStateOf("") }
+    var dishCount by remember { mutableStateOf("") }
+    var tipPercentage by remember { mutableStateOf(0f) }
+
+    Column(
+        modifier = modifier
+            .fillMaxSize()
+            .padding(16.dp)
+            .verticalScroll(rememberScrollState()),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+    }
 }
 
 
