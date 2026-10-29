@@ -86,10 +86,22 @@ fun TipCalculatorScreen(
             )
             Text(text = "${tipPercentage.toInt()}%")
         }
-
     }
 }
 
+@Composable
+private fun RadioButtonGroup(
+    selected: Int,
+    discount: Int
+) {
+    Row(verticalAlignment = Alignment.CenterVertically) {
+        RadioButton(
+            selected = selected == discount,
+            onClick = {}
+        )
+        Text(text = "$selected%")
+    }
+}
 
 @Preview(showBackground = true)
 @Composable
