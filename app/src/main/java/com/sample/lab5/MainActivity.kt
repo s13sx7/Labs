@@ -86,6 +86,40 @@ fun TipCalculatorScreen(
             )
             Text(text = "${tipPercentage.toInt()}%")
         }
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        // Скидка
+        Text(text = "Скидка:")
+        val count = dishCount.toIntOrNull() ?: 0
+        val discount = when {
+            count <= 2 -> 3
+            count <= 5 -> 5
+            count <= 10 -> 7
+            else -> 10
+        }
+
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceAround
+        ) {
+            RadioButtonGroup(
+                selected = 3,
+                discount = discount
+            )
+            RadioButtonGroup(
+                selected = 5,
+                discount = discount
+            )
+            RadioButtonGroup(
+                selected = 7,
+                discount = discount
+            )
+            RadioButtonGroup(
+                selected = 10,
+                discount = discount
+            )
+        }
     }
 }
 
